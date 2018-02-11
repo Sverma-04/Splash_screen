@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.saloni.splash_screen.LocationClass">
+    tools:context="com.example.saloni.splash_screen.LocationClass"
+    android:background="@color/colorPrimary">
 
     <TextView
         android:id="@+id/locationText"
@@ -29,6 +30,7 @@
         android:layout_centerInParent="true"
         android:background="#FFFFFF"
         android:padding="10dp"
+        android:textColor="#ABC"
         android:text="Get Current Location"
         app:layout_constraintBottom_toBottomOf="@id/locationText"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -41,10 +43,10 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:background="@color/colorPrimary"
+        android:background="#FFFFFF"
         android:onClick="sendToNewsAPIView"
         android:text="News"
-        android:textColor="@color/colorWhite"
+        android:textColor="#ABC"
         app:layout_constraintBottom_toBottomOf="@id/locationText"
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -58,10 +60,10 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:background="@color/colorPrimary"
+        android:background="#FFFFFF"
         android:text="TM Source"
         android:onClick="sendToTMsource"
-        android:textColor="@color/colorWhite"
+        android:textColor="#ABC"
         app:layout_constraintBottom_toBottomOf="@id/locationText"
         app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintLeft_toLeftOf="parent"

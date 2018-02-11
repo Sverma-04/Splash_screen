@@ -2,24 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark" >
+    android:background="@color/colorPrimary" >
 
     <ImageView
         android:id="@+id/action_image"
         android:layout_width="800px"
         android:layout_height="800px"
         android:layout_centerInParent="true"
-        android:src="@mipmap/tgt_news" />
+        android:src="@mipmap/ic_launcher" />
 
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:textSize="12dp"
-        android:textColor="#454545"
+        android:textSize="20dp"
+        android:textColor="#000000"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
-        android:text="Welcome to Target News" />
+        android:textColorHighlight="#000000"
+        android:text="Welcome to Target-Infosec News" />
 
 </RelativeLayout>
