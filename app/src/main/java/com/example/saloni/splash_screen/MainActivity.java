@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,10 +20,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String cc = extras.getString("COUNTRY_CODE");
+            Toast.makeText(MainActivity.this,"Country code"+cc,Toast.LENGTH_LONG).show();
+
+
+            //The key argument here must match that used in the other activity
+        }
+        else{
+            Toast.makeText(MainActivity.this,"NoCode",Toast.LENGTH_LONG).show();
+        }
+
 
 
     }
             public void sendToTMsource(View v) {
+
+
                 Intent intent_TMnewsSource = new Intent(MainActivity.this, TM_source.class);
                 startActivity(intent_TMnewsSource);
             }

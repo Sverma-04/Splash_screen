@@ -16,13 +16,18 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import android.content.Intent;
 
 public class newsAPIView extends AppCompatActivity {
 
-    String API_KEY = "bedaede6855141709884425dde2c9b01"; // ### YOUE NEWS API HERE ###
+    String API_KEY = "bedaede6855141709884425dde2c9b01";    //bbc
     String NEWS_SOURCE = "hacker-news";
     ListView listNews;
     ProgressBar loader;
+    String cc;
+
+
+
 
     ArrayList<HashMap<String, String>> dataList = new ArrayList<HashMap<String, String>>();
     static final String KEY_AUTHOR = "author";
@@ -41,7 +46,21 @@ public class newsAPIView extends AppCompatActivity {
         loader = (ProgressBar) findViewById(R.id.loader);
         listNews.setEmptyView(loader);
 
+//        String cc = getIntent().getStringExtra("COUNTRY_CODE");
+//        Toast.makeText(newsAPIView.this,"Country code"+cc,Toast.LENGTH_LONG).show();
 
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+             cc = extras.getString("COUNTRY_CODE");
+            Toast.makeText(newsAPIView.this,"Country code"+cc,Toast.LENGTH_LONG).show();
+
+
+            //The key argument here must match that used in the other activity
+        }
+        else{
+            Toast.makeText(newsAPIView.this,"NoCode",Toast.LENGTH_LONG).show();
+        }
 
         if(Function.isNetworkAvailable(getApplicationContext()))
         {
@@ -60,12 +79,22 @@ public class newsAPIView extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
 
+//            LocationClass locationobj=new LocationClass();
+//            cc=locationobj.countryCode;
+//            Toast.makeText(newsAPIView.this,"CC"+cc,Toast.LENGTH_LONG).show();
+
+
         }
         protected String doInBackground(String... args) {
             String xml = "";
 
+
+
             String urlParameters = "";
-            xml = Function.excuteGet("https://newsapi.org/v2/top-headlines?sources="+NEWS_SOURCE+"&sortBy=top&apiKey="+API_KEY, urlParameters);
+            //xml = Function.excuteGet("https://newsapi.org/v2/top-headlines?sources="+NEWS_SOURCE+"&sortBy=top&apiKey="+API_KEY, urlParameters);
+            //xml = Function.excuteGet("https://newsapi.org/v2/everything?q=security&apiKey="+API_KEY,urlParameters);
+            //Toast.makeText(newsAPIView.this,"Country code is:"+cc,Toast.LENGTH_LONG).show();
+            xml = Function.excuteGet("https://newsapi.org/v2/top-headlines?country"+cc+"&category=technology&language=en&apiKey="+API_KEY,urlParameters);
             return  xml;
         }
         @Override

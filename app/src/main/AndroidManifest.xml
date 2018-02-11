@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +18,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SplashScreen"
             android:label="Splash_screen"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
@@ -24,6 +29,9 @@
         </activity>
 
         <activity android:name=".MainActivity"/>
+
+        <activity android:name=".LocationClass"
+            android:exported="true"/>
 
         <activity
             android:name=".TM_source"/>
