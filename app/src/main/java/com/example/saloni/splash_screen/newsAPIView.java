@@ -1,6 +1,7 @@
 package com.example.saloni.splash_screen;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -49,6 +50,7 @@ public class newsAPIView extends AppCompatActivity {
 //        String cc = getIntent().getStringExtra("COUNTRY_CODE");
 //        Toast.makeText(newsAPIView.this,"Country code"+cc,Toast.LENGTH_LONG).show();
 
+
         Bundle extras = getIntent().getExtras();
 
         if (extras != null) {
@@ -92,9 +94,9 @@ public class newsAPIView extends AppCompatActivity {
 
             String urlParameters = "";
             //xml = Function.excuteGet("https://newsapi.org/v2/top-headlines?sources="+NEWS_SOURCE+"&sortBy=top&apiKey="+API_KEY, urlParameters);
-            //xml = Function.excuteGet("https://newsapi.org/v2/everything?q=security&apiKey="+API_KEY,urlParameters);
+            xml = Function.excuteGet("https://newsapi.org/v2/top-headlines?q=security&apiKey="+API_KEY,urlParameters);
             //Toast.makeText(newsAPIView.this,"Country code is:"+cc,Toast.LENGTH_LONG).show();
-            xml = Function.excuteGet("https://newsapi.org/v2/top-headlines?country"+cc+"&category=technology&language=en&apiKey="+API_KEY,urlParameters);
+            //xml = Function.excuteGet("https://newsapi.org/v2/top-headlines?country"+cc+"&category=technology&language=en&apiKey="+API_KEY,urlParameters);
             return  xml;
         }
         @Override

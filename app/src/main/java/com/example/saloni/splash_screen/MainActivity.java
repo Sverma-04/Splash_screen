@@ -35,16 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-            public void sendToTMsource(View v) {
-
-
-                Intent intent_TMnewsSource = new Intent(MainActivity.this, TM_source.class);
-                startActivity(intent_TMnewsSource);
-            }
-    public void sendToNewsAPIView(View v) {
-        Intent intent_newsList = new Intent(MainActivity.this, newsAPIView.class);
-        startActivity(intent_newsList);
-    }
+//            public void sendToTMsource(View v) {
+//
+//
+//                Intent intent_TMnewsSource = new Intent(MainActivity.this, TM_source.class);
+//                startActivity(intent_TMnewsSource);
+//            }
+//    public void sendToNewsAPIView(View v) {
+//        Intent intent_newsList = new Intent(MainActivity.this, newsAPIView.class);
+//        startActivity(intent_newsList);
+//    }
 
 
 //        public void sendToNewsAPI(View v) {

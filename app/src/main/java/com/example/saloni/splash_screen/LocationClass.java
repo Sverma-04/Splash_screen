@@ -35,8 +35,9 @@ public class LocationClass extends AppCompatActivity implements LocationListener
         getSupportActionBar().hide();
         setContentView(R.layout.activity_location);
 
-        getLocationBtn = (Button)findViewById(R.id.getLocationBtn);
+       getLocationBtn = (Button)findViewById(R.id.getLocationBtn);
         locationText = (TextView)findViewById(R.id.locationText);
+
 
 
         if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -45,13 +46,13 @@ public class LocationClass extends AppCompatActivity implements LocationListener
 
         }
 
-
         getLocationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getLocation();
             }
         });
+
     }
 
     void getLocation() {
@@ -79,14 +80,31 @@ public class LocationClass extends AppCompatActivity implements LocationListener
             countryName = addresses.get(0).getCountryName();
             Toast.makeText(getApplicationContext(), countryCode, Toast.LENGTH_LONG).show();
 
-            Intent intent = new Intent(getBaseContext(), newsAPIView.class);
-            intent.putExtra("COUNTRY_CODE", countryCode);
-            startActivity(intent);
+//            Intent intent = new Intent(getBaseContext(), newsAPIView.class);
+//            intent.putExtra("COUNTRY_CODE", countryCode);
+//            startActivity(intent);
         }catch(Exception e)
         {
 
         }
 
+
+    }
+
+    public void sendToTMsource(View v) {
+
+
+        Intent intent_TMnewsSource = new Intent(LocationClass.this, TM_source.class);
+        startActivity(intent_TMnewsSource);
+
+    }
+    public void sendToNewsAPIView(View v) {
+        //Intent intent_newsList = new Intent(LocationClass.this, newsAPIView.class);
+        Intent intent = new Intent(getBaseContext(), newsAPIView.class);
+       intent.putExtra("COUNTRY_CODE", countryCode);
+       startActivity(intent);
+
+       // startActivity(intent_newsList);
 
     }
 
@@ -104,4 +122,5 @@ public class LocationClass extends AppCompatActivity implements LocationListener
     public void onProviderEnabled(String provider) {
 
     }
+
 }
