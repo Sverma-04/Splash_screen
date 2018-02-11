@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.saloni.splash_screen.LocationClass">
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_above="@+id/getLocationBtn"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#ABC"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/getLocationBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:text="Get Current Location"
+        app:layout_constraintBottom_toBottomOf="@id/locationText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.118" />
+
+    <!--<TextView
+        android:id="@+id/txtLatitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:text="Latitude"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="@id/txtLongitude"
+        app:layout_constraintHorizontal_bias="0.309"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <TextView
+        android:id="@+id/txtLongitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:text="Longitude"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@id/txtLongitude"
+        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintLeft_toLeftOf="@id/txtLatitude"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />-->
+
+</android.support.constraint.ConstraintLayout>
